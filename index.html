@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Animation</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="images" id="leftImages">
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="images" id="rightImages">
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+                <div class="image"><img src="img/pexels-nardo-3574678.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+<script>
+    var timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".container",
+          start: "top 0%",
+          end: "bottom 0%",
+          scrub: 1,
+          // markers: true,
+          ease: "power1.inOut",
+        },
+      });
+
+      timeline.to("#leftImages", {
+        y: -1400,
+      }).to("#rightImages", {
+        y: 1400,
+      });
+</script>
+
+</body>
+</html>
